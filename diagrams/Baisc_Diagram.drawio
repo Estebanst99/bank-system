@@ -1,0 +1,82 @@
+<mxfile host="drawio-plugin" modified="2025-05-13T09:35:58.773Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36" etag="dC72CG5TpnIBwv1tpklW" version="22.1.22" type="embed">
+  <diagram name="Page-1" id="oqj8GodcAs0_U5yOsJUG">
+    <mxGraphModel dx="1107" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#FFFFFF" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-1" value="Client&amp;nbsp;&lt;br&gt;-----------------&lt;br&gt;ID&lt;br&gt;Name&lt;br&gt;List&amp;lt;Account&amp;gt; Accounts" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="70" y="310" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-2" value="Account&lt;br&gt;---------------&lt;br&gt;ID&lt;br&gt;Balance&lt;br&gt;" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="270" y="420" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-3" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="p8UUwe1CLydeXeaeeKRA-2" target="p8UUwe1CLydeXeaeeKRA-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="360" y="590" as="sourcePoint" />
+            <mxPoint x="310" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="p8UUwe1CLydeXeaeeKRA-2" target="p8UUwe1CLydeXeaeeKRA-6" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="395" y="490" as="sourcePoint" />
+            <mxPoint x="470" y="570" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-5" value="Current Account" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="220" y="600" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-6" value="Savings Account" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="360" y="600" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-8" value="Transaction&lt;br&gt;------------------------&lt;br&gt;ID" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="270" y="260" width="140" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-10" value="BANK&lt;br&gt;-------------------------------------&lt;br&gt;Create accounts&lt;br&gt;Create Clients&lt;br&gt;Handle transactions" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="580" y="290" width="250" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-11" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.559;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="p8UUwe1CLydeXeaeeKRA-1" target="p8UUwe1CLydeXeaeeKRA-2" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="210" y="410" as="sourcePoint" />
+            <mxPoint x="310" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-12" value="" style="edgeStyle=entityRelationEdgeStyle;fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="p8UUwe1CLydeXeaeeKRA-1" target="p8UUwe1CLydeXeaeeKRA-8" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="210" y="420" as="sourcePoint" />
+            <mxPoint x="310" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="240" y="330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-13" value="Deposit" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="480" y="220" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-14" value="WithDrawl" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="480" y="300" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-15" value="Transfer" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="480" y="380" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="p8UUwe1CLydeXeaeeKRA-8" target="p8UUwe1CLydeXeaeeKRA-13" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="330" as="sourcePoint" />
+            <mxPoint x="480" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-17" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="p8UUwe1CLydeXeaeeKRA-8" target="p8UUwe1CLydeXeaeeKRA-14" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="410" y="330" as="sourcePoint" />
+            <mxPoint x="480" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p8UUwe1CLydeXeaeeKRA-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="p8UUwe1CLydeXeaeeKRA-8" target="p8UUwe1CLydeXeaeeKRA-15" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="425" y="350" as="sourcePoint" />
+            <mxPoint x="495" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
