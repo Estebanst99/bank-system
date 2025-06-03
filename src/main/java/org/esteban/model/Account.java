@@ -1,6 +1,6 @@
 package org.esteban.model;
 
-abstract class Account {
+public abstract class Account {
 
     private String id;
     private float balance;

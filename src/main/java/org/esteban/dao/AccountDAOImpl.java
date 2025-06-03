@@ -1,6 +1,9 @@
 package org.esteban.dao;
 
 import org.esteban.exception.AccountDAOException;
+import org.esteban.model.Account;
+import org.esteban.model.AccountChecking;
+import org.esteban.model.AccountSaving;
 import org.esteban.util.DBConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -67,9 +70,7 @@ public class AccountDAOImpl implements AccountDAO {
             try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_BALANCE)) {
                 LOGGER.debug("Depositing {} to account with id {}", amount, accountId);
 
-                if (amount <= 0) {
-                    throw new AccountDAOException("Deposit amount must be greater than zero.");
-                }
+
 
                 preparedStatement.setFloat(1, amount);
                 preparedStatement.setString(2, accountId);
@@ -127,6 +128,45 @@ public class AccountDAOImpl implements AccountDAO {
                 }
             }
         } catch (Exception e) {
+            throw new AccountDAOException(COULD_NOT_CONNECT_TO_DATABASE, e);
+        }
+    }
+
+    @Override
+    public Account getAccountDetails(String accountId) throws AccountDAOException {
+        try{
+            if (connection == null) {
+                connection = DBConnection.getConnection();
+                connection.setAutoCommit(false);
+            }
+            try(PreparedStatement preparedStatement = connection.prepareStatement(GET_ACCOUNT_BY_ID)) {
+
+                LOGGER.debug("Retrieving account with id {}", accountId);
+                preparedStatement.setString(1, accountId);
+                ResultSet rs = preparedStatement.executeQuery();
+
+                if (rs.next()) {
+                    Account account;
+                    String id = rs.getString("id");
+                    String clientId = rs.getString("client_id");
+                    float balance = rs.getFloat("balance");
+                    String type = rs.getString("type");
+
+                    if (type.equals(Account.AccountType.CHECKING.toString())){
+                        account = new AccountChecking(id, balance, clientId, type);
+                    }else{
+                        account = new AccountSaving(id, balance, clientId, type);
+                    }
+
+                    LOGGER.info("Account details: id: {}, clientId: {}, balance: {}, type: {}", id, clientId, balance, type);
+                    return account;
+
+                } else {
+                    connection.rollback();
+                    throw new AccountDAOException("Account with id: " + accountId + " not found.");
+                }
+            }
+        }catch (Exception e) {
             throw new AccountDAOException(COULD_NOT_CONNECT_TO_DATABASE, e);
         }
     }
