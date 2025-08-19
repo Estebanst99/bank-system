@@ -9,6 +9,10 @@ public class ClientServiceImpl implements ClientService {
     /*private static final Logger LOGGER = LoggerFactory.getLogger(ClientServiceImpl.class);*/
     private ClientDAO clientDAO;
 
+    public ClientServiceImpl(ClientDAO clientDAO) {
+        this.clientDAO = clientDAO;
+    }
+
     @Override
     public void createClient(String id, String name) {
         try {

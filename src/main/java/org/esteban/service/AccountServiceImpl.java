@@ -1,16 +1,19 @@
 package org.esteban.service;
 
 import org.esteban.dao.AccountDAO;
-import org.esteban.dao.AccountDAOImpl;
 import org.esteban.exception.AccountDAOException;
 import org.esteban.exception.AccountServiceException;
 
 public class AccountServiceImpl implements AccountService{
 
 
-   private final AccountDAO accountDAO = new AccountDAOImpl();
+   private final AccountDAO accountDAO;
    private static final String CHECKING = "CHECKING";
-    private static final String SAVINGS = "SAVINGS";
+   private static final String SAVINGS = "SAVINGS";
+
+    public AccountServiceImpl(AccountDAO accountDAO) {
+        this.accountDAO = accountDAO;
+    }
 
     @Override
     public void createAccount(String id, String clientId, String accountType) throws AccountDAOException {
